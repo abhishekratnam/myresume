@@ -161,7 +161,6 @@ a:hover{
     background-color: #f1f2f3;
     border-radius: 20px;
     margin-bottom: 12px;
-
 }
 
 .bar__icon {
@@ -178,7 +177,7 @@ a:hover{
 }
 /* projects */
 .projects {
-    height: 72vh;
+    height: 70vh;
     padding-top: 30px;
     overflow-y: auto;
 }

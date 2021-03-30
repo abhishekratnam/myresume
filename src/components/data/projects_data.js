@@ -40,7 +40,8 @@ const data_projects = [
     {
         name: 'Colab',
         image: colab,
-        deployed_url: '!#',
+        deployed_url: 'https://github.com/Dey-Sumit/tweetme',
+        github_url: 'https://github.com/Dey-Sumit/tweetme',
         category: ['html_css', 'python','django']
     },
 
@@ -48,6 +49,7 @@ const data_projects = [
         name: 'Tweetme',
         image: tweetme_clone,
         deployed_url: 'http://suprateem.herokuapp.com/',
+        github_url : 'https://github.com/Dey-Sumit/tweetme',
         category: ['react']
     }
 ]

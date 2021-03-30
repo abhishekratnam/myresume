@@ -2,7 +2,7 @@ import React from 'react';
 import react from '../assets/icons/react.svg'
 import python from '../assets/icons/python.svg'
 import Bar from './Bar';    
-
+import {motion} from 'framer-motion';
 const languages = [
     {
         icon: python,
@@ -52,8 +52,23 @@ const tools = [
 
 
 const Resume = () => {
+    const resume_variant={
+        hidden:{
+            y: '-30vh',
+            opacity:0
+        },
+        visible:{
+            opacity:1,
+            transition:{
+                delay:0.2,duration:0.7
+            }
+        }
+    }
     return (
-        <div className="container resume">
+        <motion.div className="container resume"
+        variant={resume_variant}
+        initial='hidden'
+        animate='visible'>
             <div className="row">
                 <div className="col-lg-6 resume-card" >
                     <h4 className="resume-card__heading">
@@ -109,7 +124,7 @@ const Resume = () => {
                     </div>
                 </div>
             </div>
-        </div>
+        </motion.div>
     );
 };
 export default Resume;
