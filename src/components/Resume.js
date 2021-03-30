@@ -1,7 +1,7 @@
 import React from 'react';
 import react from '../assets/icons/react.svg'
 import python from '../assets/icons/python.svg'
-import Bar from './Bar';
+import Bar from './Bar';    
 
 const languages = [
     {
@@ -93,7 +93,7 @@ const Resume = () => {
                     <div className="resume-language__body mt-3">
                         {
                             languages.map(language =>
-                                <Bar value={language} />
+                                <Bar value={language}/>
                             )
                         }
                     </div>
