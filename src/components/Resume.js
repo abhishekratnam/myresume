@@ -45,7 +45,7 @@ const tools = [
     {
         icon: react,
         name: 'My-SQL',
-        level: '45'
+        level: '85'
     },
 
 ]
