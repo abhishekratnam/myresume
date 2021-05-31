@@ -20,7 +20,7 @@ function App() {
         {/* navbar */}
         <Navbar/>
 
-        <AnimatePresence>
+        <AnimatePresence exitBeforeEnter>
         <Switch location={location} key={location.key}>
         <Route exact path="/">
           <About/>

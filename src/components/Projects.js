@@ -5,10 +5,12 @@ import {useState} from 'react';
 import {motion} from 'framer-motion';
 const Projects = () => {
     const [projects, setProjects] = useState(data_projects)
+    const [active, setActive] = useState('All')
 
     const handleFilterCategory = (name) => {
         const new_array = data_projects.filter(project => project.category.includes(name))
         setProjects(new_array)
+        setActive(name)
     }
     const project_variant={
         hidden:{
@@ -20,7 +22,14 @@ const Projects = () => {
             transition:{
                 delay:0.2,duration:0.7
             }
+        },
+        exit:{
+            opacity: 0,
+            transition:{
+                ease: 'easeInOut'
+            }
         }
+
     }
 
         return(
@@ -28,14 +37,23 @@ const Projects = () => {
                 variant={project_variant}
                 initial='hidden'
                 animate='visible'
+                exit='exit'
                 >
                 <div className='projects__navbar'>
-                    <div onClick={()=>setProjects(data_projects)}>All</div>
-                    <div onClick={()=>handleFilterCategory('react')}>React-js</div>
-                    <div onClick={()=>handleFilterCategory('angular')}>Angular</div>
-                    <div onClick={()=>handleFilterCategory('Data Science')}>Data Science</div>
-                    <div onClick={()=>handleFilterCategory('django')}>Python-Django</div>
-                    <div onClick={()=>handleFilterCategory('golang')}>Golang</div>
+                    <div className={active === 'All' && 'projects__navbar-active'} onClick={
+                    () => {
+                        setProjects(data_projects)
+                        setActive("All")
+
+                    }
+
+
+                }>All</div>
+                    <div className={active === 'angular' && 'projects__navbar-active'} onClick={()=>handleFilterCategory('angular')}>Angular</div>
+                    <div className={active === 'react' && 'projects__navbar-active'} onClick={()=>handleFilterCategory('react')}>React-js</div>
+                    <div className={active === 'Data Science' && 'projects__navbar-active'} onClick={()=>handleFilterCategory('Data Science')}>Data Science</div>
+                    <div className={active === 'django' && 'projects__navbar-active'} onClick={()=>handleFilterCategory('django')}>Python-Django</div>
+                    <div className={active === 'golang' && 'projects__navbar-active'} onClick={()=>handleFilterCategory('golang')}>Golang</div>
                 </div>
                 <div className='row'>
                     {

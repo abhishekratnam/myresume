@@ -35,6 +35,12 @@ const About = () => {
             transition:{
                 delay:0.2,duration:0.7
             }
+        },
+        exit:{
+            opacity: 0,
+            transition:{
+                ease: 'easeInOut'
+            }
         }
     }
         return(
@@ -42,9 +48,10 @@ const About = () => {
             variant={about_variant}
             initial='hidden'
             animate='visible'
+            exit='exit'
             >
                 <h6 className="about__intro">
-                    Lorem ipsum
+                    I am a polyglot tech geek always looking/learning to solve realworld Problems.
                 </h6>
                 <div className="container about__container">
                     <h6 className="about__heading">What I offer</h6>

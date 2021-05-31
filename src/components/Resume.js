@@ -62,13 +62,20 @@ const Resume = () => {
             transition:{
                 delay:0.2,duration:0.7
             }
+        },
+        exit:{
+            opacity: 0,
+            transition:{
+                ease: 'easeInOut'
+            }
         }
     }
     return (
         <motion.div className="container resume"
         variant={resume_variant}
         initial='hidden'
-        animate='visible'>
+        animate='visible'
+        exit='exit'>
             <div className="row">
                 <div className="col-lg-6 resume-card" >
                     <h4 className="resume-card__heading">
@@ -79,7 +86,7 @@ const Resume = () => {
                             Computer Science Enginnering
                         </h5>
                         <p className="resume-card__name">
-                            Academy of Technology(2017-2021)
+                            Jaipur National University(2016-2020)
                         </p>
                         <p className="resume-card__details">B.tech in Computer Science Engineering from JNU</p>
                     </div>
